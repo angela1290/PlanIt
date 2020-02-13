@@ -1,0 +1,87 @@
+/* COLOR PLALETTE 
+Dark bli
+
+*/
+
+
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+  
+  body {
+    font-family: sans-serif;
+    margin: 0;
+  }
+
+  .header {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: 15px 10px;
+  }
+  
+  .header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px; 
+    line-height: 25px;
+    border-radius: 4px;
+  }
+  
+  .header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  .header a:hover {
+    
+  }
+  
+  .header a.active {
+   
+  }
+  
+  .header-right {
+    float: right;
+  }
+ 
+  .row {  
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+
+  .side {
+    flex: 10%;
+    background-color: #f1f1f1;
+    padding: 20px;
+  }
+  
+ 
+  .main {
+    flex: 40%;
+    background-color: white;
+    padding: 20px;
+  }
+
+  .main2 {
+    flex: 40%;
+    background-color: white;
+    padding: 20px;
+  }
+
+  .block1, .block2, .block3, .block4 {
+      background-color: lightgrey;
+      padding: 20px;
+      margin: 20px;
+  }
+  
+
+  .footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+  }
