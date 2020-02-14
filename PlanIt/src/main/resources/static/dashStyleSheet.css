@@ -175,7 +175,7 @@ input[type=checkbox] {
 
 
 .main {
-
+  margin-top: 40px;
   flex: 40%;
   background-color: white;
   padding: 20px;
