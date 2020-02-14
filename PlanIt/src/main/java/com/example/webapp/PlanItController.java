@@ -36,7 +36,7 @@ public class PlanItController {
 
     @PostMapping("/register")
     public String newUser(Model m, @ModelAttribute User user){
-        
+
 
     }
 
