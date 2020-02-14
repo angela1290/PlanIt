@@ -26,18 +26,6 @@ public class PlanItController {
         }
         return "login";
 
-
-    }
-
-    @GetMapping("/register")
-    public String showRegister(){
-        return "register";
-    }
-
-    @PostMapping("/register")
-    public String newUser(Model m, @ModelAttribute User user){
-        
-
     }
 
     @GetMapping("/dashboard")
