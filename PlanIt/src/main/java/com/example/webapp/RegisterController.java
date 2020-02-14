@@ -25,7 +25,7 @@ public class RegisterController {
         return "register";
     }
 
-    @PostMapping("/login")
+    @PostMapping("/register")
     public String registerNewUser(Model m, @ModelAttribute User user){
         allUsers.addNewUser(user);
         m.addAttribute("allUser", allUsers.getAllUsers());
