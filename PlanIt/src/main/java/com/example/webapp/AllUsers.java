@@ -12,7 +12,7 @@ public class AllUsers {
 
     public AllUsers() {
         allUsers = new ArrayList<>();
-        allUsers.add(new User("krisAnd","admin", "krister.andersson@med.lu.se", "Krister", "Andersson", 45500505));
+        allUsers.add(new User("krisAnd","admin", "krister.andersson@med.lu.se", "Krister", "Andersson"));
     }
 
     public List<User> getAllUsers() {

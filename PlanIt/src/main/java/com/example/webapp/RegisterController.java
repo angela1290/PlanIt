@@ -2,9 +2,7 @@ package com.example.webapp;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 
@@ -26,11 +24,19 @@ public class RegisterController {
     }
 
     @PostMapping("/register")
-    public String registerNewUser(Model m, @ModelAttribute User user){
+    public String registerNewUser(Model m, @ModelAttribute User user, @RequestParam String password, @RequestParam String password2) throws WrongPasswordException {
+        if(!password.equals(password2)){
+            throw new WrongPasswordException();
+        }
         allUsers.addNewUser(user);
         m.addAttribute("allUser", allUsers.getAllUsers());
 
         return "login";
+    }
+    @ExceptionHandler(WrongPasswordException.class)
+    String inValidNumber(Model model){
+        model.addAttribute("invalidPassword", "Password doesn't match");
+        return"register";
     }
 
 }

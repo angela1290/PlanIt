@@ -33,8 +33,8 @@ public class PlanItController {
                 return "dash";
             }
         }
-        //throw new WrongUserNameAndPasswordException();
-return "login";
+        throw new WrongUserNameAndPasswordException();
+
     }
 
 
