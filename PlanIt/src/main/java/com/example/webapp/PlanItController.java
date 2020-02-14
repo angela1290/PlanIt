@@ -5,25 +5,38 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 
 @Controller
-
 public class PlanItController {
+
+    AllUsers allUsers;
+
+    public PlanItController(AllUsers allUsers) {
+        this.allUsers = allUsers;
+    }
 
     @GetMapping("/login")
     public String showLoginSite(){
+        //System.out.println(allUsers.getAllUsers().size());
+        //System.out.println(allUsers.getAllUsers());
         return "login";
     }
 
     @PostMapping("/login")
-    public String login(Model m, HttpSession session, @RequestParam String username, @RequestParam String password, HttpSession s) throws WrongUserNameAndPasswordException {
-        if (username.equals("admin") && password.equals("admin")) {
-            session.setAttribute("logger", username);
-            return "dash";
-        } else {
-                throw new WrongUserNameAndPasswordException();
+    public String login(Model m, HttpSession session,@RequestParam String username , @RequestParam String password,  HttpSession s) throws WrongUserNameAndPasswordException {
+
+        for (User user : allUsers.getAllUsers()) {
+            System.out.println(user.getUsername());
+            if (username.equals(user.getUsername()) && password.equals(user.getPassword())) {
+                session.setAttribute("logger", username);
+                return "dash";
             }
+        }
+        throw new WrongUserNameAndPasswordException();
+
     }
+
 
     @GetMapping("/dashboard")
     public String showDash(){

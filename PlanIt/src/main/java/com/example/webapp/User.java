@@ -27,4 +27,20 @@ public class User {
                 " Lastname: "  + lastname  +
                 " Phone: " + phone;
     }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public String getUsername() {
+        return username;
+    }
 }
