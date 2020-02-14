@@ -1,4 +1,4 @@
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -13,30 +13,28 @@
     <form id="contact_form" method="POST" action="/register">
         <h2>Register</h2>
         <div id="name_input">
-            <label for="first">Your Name: </label><br><br>
-            <input id="first" type="text" name="firstname" placeholder="First Name">
-            <input id="last" type="text" name="lastname" placeholder="Last Name">
-            <br>
-            <label>Enter username: </label>
-            <input type="text" name="username" placeholder="Username..">
+            <label for="first">Your Name: </label><br>
+            <input id="first" type="text" name="firstname" placeholder="First Name" autofocus>
+            <input id="last" type="text" name="lastname" placeholder="Last Name" autofocus>
+            <br><br>
+            <label>Enter username: </label><br>
+            <input type="text" name="username" placeholder="Username.." autofocus required><br><br>
+
             <label>Enter new password: </label><br>
-            <input type="text" name="password" placeholder="Password..">
-            <br>
+            <input type="text" name="password" placeholder="Password.." autofocus required>
+            <br><br>
             <label for="email">Email Adress: </label><br>
-            <input id="email" type="email" placeholder="Enter email.." name="email">
-
+            <input id="email" type="email" placeholder="Enter email.." name="email" autofocus>
+            <br><br>
             <label for="phone">Phone Number: </label><br>
-            <input id="phone" type="phone" placeholder="+47 413 54 734" name="phone"><br>
-
+            <input id="phone" type="tel" placeholder="+47 413 54 734" name="phone" autofocus>
+            <br><br>
             <button class="button" id="form_button">Submit</button>
             <br>
 
-            <ul th:each="user : ${allUser}" >
-
+            <div th:each="user : ${allUser}" >
             <p th:text="${user}"></p>
-
-
-            </ul>
+            </div>
 
         </div>
         <br><br>
@@ -44,4 +42,4 @@
 </div>
 </body>
 
-</html>
+</html>x
