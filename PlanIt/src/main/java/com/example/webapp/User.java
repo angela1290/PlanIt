@@ -8,6 +8,7 @@ public class User {
     private String lastname;
     private int phone;
 
+
     public User(String username, String password, String email, String firstname, String lastname, int phone) {
         this.username = username;
         this.password = password;
@@ -15,5 +16,15 @@ public class User {
         this.firstname = firstname;
         this.lastname = lastname;
         this.phone = phone;
+    }
+
+    @Override
+    public String toString() {
+        return " Username: " + username  +
+                " Password: " + password  +
+                " Email: " + email  +
+                " Firstname: " + firstname +
+                " Lastname: "  + lastname  +
+                " Phone: " + phone;
     }
 }

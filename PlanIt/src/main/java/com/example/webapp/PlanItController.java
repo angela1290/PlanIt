@@ -19,25 +19,12 @@ public class PlanItController {
     }
 
     @PostMapping("/login")
-    public String login(Model m, HttpSession session, @RequestParam String username, @RequestParam String password, HttpSession s){
-        if (username.equals("admin") && password.equals("admin")){
-            session.setAttribute("logger",username);
+    public String login(Model m, HttpSession session, @RequestParam String username, @RequestParam String password, HttpSession s) {
+        if (username.equals("admin") && password.equals("admin")) {
+            session.setAttribute("logger", username);
             return "dash";
         }
         return "login";
-
-
-    }
-
-    @GetMapping("/register")
-    public String showRegister(){
-        return "register";
-    }
-
-    @PostMapping("/register")
-    public String newUser(Model m, @ModelAttribute User user){
-
-
     }
 
     @GetMapping("/dashboard")
