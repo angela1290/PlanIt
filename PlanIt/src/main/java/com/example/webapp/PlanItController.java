@@ -24,7 +24,7 @@ public class PlanItController {
     }
 
     @PostMapping("/login")
-    public String login(Model m, HttpSession session,@RequestParam String username , @RequestParam String password,  HttpSession s) throws WrongUserNameAndPasswordException {
+    public String login(Model m, HttpSession session,@RequestParam String username , @RequestParam String password) throws WrongUserNameAndPasswordException {
 
         for (User user : allUsers.getAllUsers()) {
             System.out.println(user.getUsername());

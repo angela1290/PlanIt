@@ -14,11 +14,14 @@ public class RegisterController {
 
     public RegisterController(AllUsers allUsers) {
         this.allUsers = allUsers;
+
     }
 
+
     @GetMapping("/register")
-    public String showRegister(Model m){
+    public String showRegister(Model m, @ModelAttribute User user){
         m.addAttribute("allUser", allUsers.getAllUsers());
+            m.addAttribute("tempRegisterUser", user);
 
         return "register";
     }
@@ -26,6 +29,8 @@ public class RegisterController {
     @PostMapping("/register")
     public String registerNewUser(Model m, @ModelAttribute User user, @RequestParam String password, @RequestParam String password2) throws WrongPasswordException {
         if(!password.equals(password2)){
+            allUsers.addNewUser(user);
+            m.addAttribute("tempRegisterUser", user);
             throw new WrongPasswordException();
         }
         allUsers.addNewUser(user);
@@ -35,8 +40,11 @@ public class RegisterController {
     }
     @ExceptionHandler(WrongPasswordException.class)
     String inValidNumber(Model model){
+        model.addAttribute("tempRegisterUser", allUsers.getTempararyUser());
         model.addAttribute("invalidPassword", "Password doesn't match");
+        allUsers.removeTempararyUser();
         return"register";
     }
+
 
 }

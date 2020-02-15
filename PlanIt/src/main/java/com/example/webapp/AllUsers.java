@@ -22,7 +22,13 @@ public class AllUsers {
     public void addNewUser(User user){
 
         allUsers.add(user);
+    }
 
+    public void removeTempararyUser(){
+        allUsers.remove(allUsers.size()-1);
+    }
 
+    public User getTempararyUser(){
+        return allUsers.get(allUsers.size()-1);
     }
 }
