@@ -49,6 +49,11 @@ public class PlanItController {
         }
     }
 
+    @GetMapping("/list")
+    public String showList(){
+        return "list";
+    }
+
     @GetMapping("/")
     String logOutDashboard(HttpSession session){
         session.removeAttribute("logger");
