@@ -400,15 +400,18 @@ input[type=submit]:hover {
     right: 20px;
     top: 20px;
 }
+
 .clear i {
     font-size: 20px;
     color: #fff;
 }
+
 .clear i:hover {
     cursor: pointer;
     text-shadow: 1px 3px 5px #49868c;
     transform: rotate(45deg);
 }
+
 #date {
     position: absolute;
     bottom: 10px;
@@ -427,6 +430,7 @@ input[type=submit]:hover {
     margin-top: 50px;
     margin-left: 80px;
 }
+
 .content {
     width: 100%;
     height: 300px;
@@ -435,13 +439,16 @@ input[type=submit]:hover {
     overflow: auto;
     color: #49868c;
 }
+
 .content::-webkit-scrollbar {
     display: none;
 }
+
 .content ul {
     padding: 0;
     margin: 0;
 }
+
 .item {
     width: 100%;
     height: 45px;
@@ -452,6 +459,7 @@ input[type=submit]:hover {
     padding: 0;
     margin: 0;
 }
+
 .item i.co {
     position: absolute;
     font-size: 25px;
@@ -459,12 +467,15 @@ input[type=submit]:hover {
     left: 15px;
     top: 10px;
 }
+
 .item i.co:hover {
     cursor: pointer;
 }
+
 .fa-check-circle {
     color: #a0d9d9;
 }
+
 .item p.text {
     position: absolute;
     padding: 0;
@@ -474,20 +485,24 @@ input[type=submit]:hover {
     top: 13px;
     max-width: 285px;
 }
+
 .lineThrough {
     text-decoration: line-through;
     color: #ccc;
 }
+
 .item i.de {
     position: absolute;
     font-size: 25px;
     right: 15px;
     top: 10px;
 }
+
 .item i.de:hover {
     color: #a62d2d;
     cursor: pointer;
 }
+
 /* ------------ add item ------------ */
 .add-to-do {
     position: relative;
@@ -498,6 +513,7 @@ input[type=submit]:hover {
     padding: 10px;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
+
 .add-to-do i {
     position: absolute;
     font-size: 40px;
@@ -514,24 +530,28 @@ input[type=submit]:hover {
     font-size: 18px;
     padding-left: 10px;
 }
+
 .add-to-do input::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
     color: #49868c;
     font-family: Verdana;
     font-size: 18px;
 }
+
 .add-to-do input::-moz-placeholder {
     /* Firefox 19+ */
     color: #49868c;
     font-family: 'Ariel', 'Titillium Web', sans-serif;
     font-size: 18px;
 }
+
 .add-to-do input:-ms-input-placeholder {
     /* IE 10+ */
     color: #49868c;
     font-family: 'Ariel', 'Titillium Web', sans-serif;
     font-size: 18px;
 }
+
 .add-to-do input:-moz-placeholder {
     /* Firefox 18- */
     color: #49868c;
