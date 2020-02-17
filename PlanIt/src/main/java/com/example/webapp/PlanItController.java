@@ -39,7 +39,10 @@ public class PlanItController {
 
 
     @GetMapping("/dash")
-    public String showDash(HttpSession session){
+    public String showDash(HttpSession session, @ModelAttribute Budget budget, Model model){
+
+        model.addAttribute("budget", session.getAttribute("budget"));
+
         String username = (String) session.getAttribute("logger");
         if(username != null){
             return "dash";
