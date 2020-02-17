@@ -9,7 +9,6 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 public class RegisterController {
-
     AllUsers allUsers;
 
     public RegisterController(AllUsers allUsers) {
@@ -27,7 +26,14 @@ public class RegisterController {
     }
 
     @PostMapping("/register")
-    public String registerNewUser(Model m, @ModelAttribute User user, @RequestParam String password, @RequestParam String password2) throws WrongPasswordException {
+    public String registerNewUser(Model m, @ModelAttribute User user,@RequestParam String username, @RequestParam String password, @RequestParam String password2) throws WrongPasswordException, SameUserNameException {
+        for(User userName : allUsers.getAllUsers()){
+            if(username.equals(userName.getUsername())){
+                allUsers.addNewUser(user);
+                m.addAttribute("tempRegisterUser", user);
+                throw new SameUserNameException();
+            }
+        }
         if(!password.equals(password2)){
             allUsers.addNewUser(user);
             m.addAttribute("tempRegisterUser", user);
@@ -36,7 +42,7 @@ public class RegisterController {
         allUsers.addNewUser(user);
         m.addAttribute("allUser", allUsers.getAllUsers());
 
-        return "login";
+        return "login2";
     }
     @ExceptionHandler(WrongPasswordException.class)
     String inValidNumber(Model model){
@@ -44,6 +50,13 @@ public class RegisterController {
         model.addAttribute("invalidPassword", "Password doesn't match");
         allUsers.removeTempararyUser();
         return"register";
+    }
+    @ExceptionHandler(SameUserNameException.class)
+    String invalidUsername(Model model){
+        model.addAttribute("tempRegisterUser", allUsers.getTempararyUser());
+        model.addAttribute("invalidUserName", String.format("User %s already exists", allUsers.getTempararyUser().getUsername()));
+        allUsers.removeTempararyUser();
+        return "register";
     }
 
 

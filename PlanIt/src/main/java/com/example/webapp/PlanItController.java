@@ -20,7 +20,7 @@ public class PlanItController {
     public String showLoginSite(){
         //System.out.println(allUsers.getAllUsers().size());
         //System.out.println(allUsers.getAllUsers());
-        return "login";
+        return "login2";
     }
 
     @PostMapping("/login")
@@ -38,14 +38,20 @@ public class PlanItController {
     }
 
 
-    @GetMapping("/dashboard")
-    public String showDash(){
-        return "dash";
+    @GetMapping("/dash")
+    public String showDash(HttpSession session){
+        String username = (String) session.getAttribute("logger");
+        if(username != null){
+            return "dash";
+        }else {
+            // session.getAttribute("logger");
+            return "login2";
+        }
     }
 
     @ExceptionHandler(WrongUserNameAndPasswordException.class)
     String inValidNumber(Model model){
         model.addAttribute("invalidUser", "Invalid Username or password");
-        return"login";
+        return"login2";
     }
 }
