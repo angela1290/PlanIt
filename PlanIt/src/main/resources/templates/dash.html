@@ -1,126 +1,109 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="PlanIt home page">
+  <meta name="description" content="planIt home page">
   <meta name="keywords" content="home planner, plan, calendar">
   <title>PlanIt | Home</title>
   <link rel="stylesheet" type="text/css" href="dashStyleSheet.css">
 </head>
 <!----- HEADER -------->
+
+<body>
 <div class="header">
-  <a href="#" class="logo"><img src="logo.png" alt="Plan it logo"></a>
+  <a href="#" class="logo"><img src="logo.png" alt="plan it logo"></a>
   <div class="signout">
     <a href="#">Sign out</a>
   </div>
+  <div class="hero-text">
+    <h1 th:text="HELLO" + ${username}></h1>  <!-------USERNAME GOES HERE ---->
+    <h1>GET YOUR LIFE TOGHETER</h1>
+  </div>
 </div>
-<!----- SIDE NAVIGATION ---->
-<div class="container">
-  <nav class="side">
-    <div class="side-header">
-      <h3>MY PLANNER</h3><br>
+<!----- MAIN ---->
+<main class="container">
+  <div class="sidenav">
+    <a class="link1" href="#">
+      <section class="first">
+        <img class="image" src="calendar2.png">
+        <h3>MY CALENDAR</h3>
+    </a>
+    </section>
+    <a class="link2" href="#">
+      <section class="second">
+        <img class="image" src="budget.png">
+        <h3>MY BUDGET</h3>
+      </section>
+    </a>
+    <a class="link3" href="#">
+      <section class="third">
+        <img class="image" src="list.png">
+        <h3>MY LISTS</h3>
+      </section>
+    </a>
+  </div>
+  <section class="calendar">
+    <div class="month">
+      <ul>
+        <li class="prev">&#10094;</li>
+        <li class="next">&#10095;</li>
+        <li>Februar<br><span style="font-size:18px">2020</span></li>
+      </ul>
     </div>
-    <a class="nav" href="#">LISTS</a><br><br>
-    <a class="nav" href="#">BUDGET</a><br><br>
-    <a class="nav" href="#">CALDENDAR</a><br><br>
-  </nav>
-  <!--- INFO RIGTH --->
-  <div class="main">
-    <!---<script type="text/javascript" src="https://darksky.net/widget/small/43.0481,-76.1474/us12/en.js?width=undefined&title=Full Forecast&textColor=333333&bgColor=FFFFFF&skyColor=333&fontFamily=Default&customFont=&units=us"></script>-->
-    <section class="block1">
-      <h3>TO DO..</h3>
-      <div class="cb-container">
-        <input class="box" type="checkbox" checked="checked">
-        <input type="text">
-      </div><br>
-      <div class="cb-container">
-        <input class="box" type="checkbox" checked="checked">
-        <input type="text">
-      </div><br>
-      <div class="cb-container">
-        <input class="box" type="checkbox" checked="checked">
-        <input type="text">
-      </div><br>
-      <div class="cb-container">
-        <input class="box" type="checkbox" checked="checked">
-        <input type="text">
-      </div><br>
-      <div class="cb-container">
-        <input class="box" type="checkbox" checked="checked">
-        <input type="text">
-      </div><br>
-    </section>
+    <ul class="weekdays">
+      <li>Mo</li>
+      <li>Tu</li>
+      <li>We</li>
+      <li>Th</li>
+      <li>Fr</li>
+      <li>Sa</li>
+      <li>Su</li>
+    </ul>
+    <ul class="days">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+      <li>9</li>
+      <li>10</li>
+      <li>11</li>
+      <li>12</li>
+      <li>13</li>
+      <li>
+        <div class="active">14</div>
+      </li>
+      <li>15</li>
+      <li>16</li>
+      <li>17</li>
+      <li>18</li>
+      <li>19</li>
+      <li>20</li>
+      <li>21</li>
+      <li>22</li>
+      <li>23</li>
+      <li>24</li>
+      <li>25</li>
+      <li>26</li>
+      <li>27</li>
+      <li>28</li>
+      <li>29</li>
+    </ul>
+  </section>
+</main>
+<!----- ------>
 
-    <section class="block2">
-      <h2>Shoppinglist</h2>
+<!---- <script src="https://www.yr.no/sted/Norge/Oslo/Oslo/Oslo/ekstern_boks_liten.js"></script><noscript><a href="https://www.yr.no/sted/Norge/Oslo/Oslo/Oslo/">yr.no: Værvarsel for Oslo</a></noscript>-->
 
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    </section>
-  </div>
-  <!--- INFO RIGTH / CALENDAR --->
-  <div class="main2">
-    <section class="block3">
-      <div class="month">
-        <ul>
-          <li class="prev">&#10094;</li>
-          <li class="next">&#10095;</li>
-          <li>Februar<br><span style="font-size:18px">2020</span></li>
-        </ul>
-      </div>
-      <ul class="weekdays">
-        <li>Mo</li>
-        <li>Tu</li>
-        <li>We</li>
-        <li>Th</li>
-        <li>Fr</li>
-        <li>Sa</li>
-        <li>Su</li>
-      </ul>
-      <ul class="days">
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li>6</li>
-        <li>7</li>
-        <li>8</li>
-        <li>9</li>
-        <li>10</li>
-        <li>11</li>
-        <li>12</li>
-        <li>13</li>
-        <li><div class="active">14</div></li>
-        <li>15</li>
-        <li>16</li>
-        <li>17</li>
-        <li>18</li>
-        <li>19</li>
-        <li>20</li>
-        <li>21</li>
-        <li>22</li>
-        <li>23</li>
-        <li>24</li>
-        <li>25</li>
-        <li>26</li>
-        <li>27</li>
-        <li>28</li>
-        <li>29</li>
-      </ul>
-    </section>
-    <br>
-
-    <section class="block4">
-      <h2>Budget</h2>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    </section>
-  </div>
-</div>
 <!-- Footer -->
-<div class="footer">
-  <p>©Plan It 2020. All rights reserved.</p>
-</div>
-
+<footer>
+  <div class="footer">
+    <h3>Plan It 2020. All rights reserved.</h3>
+  </div>
+</footer>
 </body>
 </html>
