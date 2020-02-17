@@ -113,6 +113,13 @@
       <li>28</li>
       <li>29</li>
     </ul>
+    <div class="budgetOverview">
+      <label th:object="${budget}">
+        <br>
+        <progress id="total" th:value="*{income-food-rent-savings}" th:max="*{income} "></progress>
+        <div th:text="'Balance: ' + *{income-food-rent-savings} + ' kr'"></div>
+      </label>
+    </div>
   </section>
 </main>
 <!----- ------>
