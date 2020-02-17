@@ -34,9 +34,7 @@ public class PlanItController {
             }
         }
         throw new WrongUserNameAndPasswordException();
-
     }
-
 
     @GetMapping("/dash")
     public String showDash(HttpSession session, @ModelAttribute Budget budget, Model model){
