@@ -27,14 +27,14 @@ main {
 
 .header a {
     float: left;
-    color: #49868C;
     text-align: center;
     padding: 12px;
     text-decoration: none;
     font-size: 18px;
     line-height: 25px;
     border-radius: 4px;
-    color: #A62D2D;
+    font-weight: bold;
+    color: #49868C;
 }
 
 img {
@@ -49,7 +49,7 @@ img {
 
 .signout {
     float: right;
-    color: #A62D2D;
+    color: #49868C;
 }
 
 .image {
@@ -65,7 +65,7 @@ img {
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #A0D9D9;
+    color: #49868C;
 }
 
 h3 {
@@ -334,7 +334,6 @@ input[type=submit]:hover {
 /*--------------------------------- LIST -----------*/
 
 .list {
-    padding: 10px;
     width: 30%;
     margin-top: 50px;
     margin-left: 80px;
@@ -382,7 +381,6 @@ input[type=submit]:hover {
 /* ------------ list content ------------ */
 
 .list1 {
-    padding: 10px;
     width: 100px;
 }
 
