@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Budget</title>
+    <link rel="stylesheet" href="BudgetStyle.css">
+</head>
+<body>
+
+
+<h1>BUDGET</h1>
+
+
+<form action="/budget" method="POST" th:object="${budget}">
+
+    <!----------Enter income---------->
+    <div class="inputBoxes">
+        <label>Leftover party money:
+            <br>
+            <progress id="total" th:value="*{income-food-rent-savings}" th:max="*{income} "></progress>
+
+        </label>
+    </div>
+
+    <!----------Enter income budget---------->
+    <div class="inputBoxes">
+        <label> Enter monthly income:
+            <br>
+            <input type="text" th:field="*{income}">
+            <input type="submit" value="Set">
+            <progress id="income" th:text="${income}" th:value="*{income}" th:max="*{income}"></progress>
+        </label>
+    </div>
+
+    <!----------Enter grocery budget---------->
+    <div class="inputBoxes">
+        <label> Enter grocery budget:
+            <br>
+            <input type="text" th:field="*{food}">
+            <input type="submit" value="Set">
+            <progress id="food" th:text="${food}" th:value="*{food}" th:max="*{income}"></progress>
+        </label>
+    </div>
+
+    <!----------Enter Rent expenses---------->
+    <div class="inputBoxes">
+        <label> Enter rent expenses:
+            <br>
+            <input type="text" th:field="*{rent}">
+            <input type="submit" value="Set">
+            <progress id="rent" th:value="*{rent}" th:max="*{income}"></progress>
+        </label>
+    </div>
+
+    <!----------Enter savings---------->
+    <div class="inputBoxes">
+        <label> Enter savings:
+            <br>
+            <input type="text" th:field="*{savings}">
+            <input type="submit" value="Set">
+            <progress id="savings" th:value="*{savings}" th:max="*{income}"></progress>
+        </label>
+    </div>
+
+</form>
+
+
+</body>
+</html>

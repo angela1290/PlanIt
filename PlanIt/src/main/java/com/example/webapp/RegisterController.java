@@ -13,9 +13,10 @@ public class RegisterController {
     AllUsers allUsers = new AllUsers();
 
     @GetMapping("/register")
-    public String showRegister(Model m){
+    public String showRegister(Model m, @ModelAttribute User user){
 
         m.addAttribute("allUser", allUsers.getAllUsers());
+
 
 
         return "register";

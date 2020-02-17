@@ -10,7 +10,7 @@
 
 <body>
 <div class="form">
-    <form id="contact_form" method="POST" action="/register">
+    <form id="contact_form" method="POST" action="/register" th:object="${user}">
         <h2>Register</h2>
         <div id="name_input">
             <label for="first">Your Name: </label><br>
@@ -32,7 +32,8 @@
             <button class="button" id="form_button">Submit</button>
             <br>
 
-            <div th:each="user : ${allUser}" >
+            <div th:each="user : ${allUser}"+
+            >
             <p th:text="${user}"></p>
             </div>
 
