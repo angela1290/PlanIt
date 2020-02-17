@@ -14,10 +14,10 @@
 <div class="header">
   <a href="#" class="logo"><img src="logo.png" alt="plan it logo"></a>
   <div class="signout">
-    <a href="#">Sign out</a>
+    <a href="/">Sign out</a>
   </div>
   <div class="hero-text">
-    <h1 th:text="HELLO" + ${username}></h1>  <!-------USERNAME GOES HERE ---->
+    <h2 th:text="Hello + ' ' + ${session.logger}"></h2>  <!-------USERNAME GOES HERE ---->
     <h1>GET YOUR LIFE TOGHETER</h1>
   </div>
 </div>

@@ -49,6 +49,13 @@ public class PlanItController {
         }
     }
 
+    @GetMapping("/")
+    String logOutDashboard(HttpSession session){
+        session.removeAttribute("logger");
+        session.invalidate();
+        return "login2";
+    }
+
     @ExceptionHandler(WrongUserNameAndPasswordException.class)
     String inValidNumber(Model model){
         model.addAttribute("invalidUser", "Invalid Username or password");
