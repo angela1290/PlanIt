@@ -15,13 +15,18 @@ public class BudgetController {
 
     @GetMapping("/budget")
     public String showBudget(@ModelAttribute Budget budget, HttpSession s, Model m) {
-
-        if (s.getAttribute("budget") != null) {
-            m.addAttribute("budget", s.getAttribute("budget"));
+        String username = (String) s.getAttribute("logger");
+        if(username != null){
+                if (s.getAttribute("budget") != null) {
+                 m.addAttribute("budget", s.getAttribute("budget"));
+                    return "budget";
+                }
+            return "budget";
         }
 
-        return "budget";
+        return "login2";
     }
+
 
     @PostMapping("/budget")
     public String setValues(@ModelAttribute Budget budget, HttpSession s) {
