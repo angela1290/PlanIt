@@ -120,7 +120,7 @@
     <div class="budgetOverview">
 
       <h1><img src="/BudgetLogo.png" alt=""></h1>
-      <label th:object="${budget}">
+      <label th:if="${budget != null}" th:object="${budget}">
         <br>
         <progress id="total" th:value="*{income-food-rent-savings}" th:max="*{income} "></progress>
         <div th:text="'Balance: ' + *{income-food-rent-savings} + ' kr'"></div>
