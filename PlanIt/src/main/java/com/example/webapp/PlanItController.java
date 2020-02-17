@@ -49,10 +49,10 @@ public class PlanItController {
         }
     }
 
-    @GetMapping("/list")
+/*    @GetMapping("/list")
     public String showList(){
         return "list";
-    }
+    }*/
 
     @GetMapping("/")
     String logOutDashboard(HttpSession session){
