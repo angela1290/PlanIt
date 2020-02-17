@@ -14,10 +14,9 @@
 <div class="header">
   <a href="#" class="logo"><img src="logony.png" alt="plan it logo"></a>
   <div class="signout">
-    <a href="/">Sign out</a>
+    <a href="#">Sign out</a>
   </div>
   <div class="hero-text">
-    <h2 th:text="Hello + ' ' + ${session.logger}"></h2>  <!-------USERNAME GOES HERE ---->
     <h1>GET YOUR LIFE TOGHETER</h1>
   </div>
 </div>
@@ -43,6 +42,25 @@
       </section>
     </a>
   </div>
+  <!----LIST-->
+  <div class="list">
+    <div class="header3">
+      <div class="clear">
+        <i class="fa fa-refresh"></i>
+      </div>
+      <div id="date"></div>
+    </div>
+    <div class="content">
+      <ul id="list">
+      </ul>
+    </div>
+    <div class="add-to-do">
+      <i class="fa fa-plus-circle"></i>
+      <input type="text" id="input" placeholder="Add a To Do" />
+    </div>
+  </div>
+  <script src="app.js"></script>
+  <!----Calendar-->
   <section class="calendar">
     <div class="month">
       <ul>
@@ -96,8 +114,6 @@
   </section>
 </main>
 <!----- ------>
-
-<!---- <script src="https://www.yr.no/sted/Norge/Oslo/Oslo/Oslo/ekstern_boks_liten.js"></script><noscript><a href="https://www.yr.no/sted/Norge/Oslo/Oslo/Oslo/">yr.no: Værvarsel for Oslo</a></noscript>-->
 
 <!-- Footer -->
 <footer>
