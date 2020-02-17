@@ -48,9 +48,10 @@
         <form action="/budget" method="POST" th:object="${budget}">
             <!----------Enter income---------->
             <div class="inputBoxes">
-                <label>Leftover party money:
+                <label>
                     <br>
                     <progress id="total" th:value="*{income-food-rent-savings}" th:max="*{income} "></progress>
+                    <div th:text="'Money to spare: ' + *{income-food-rent-savings} + ' kr'"></div>
                 </label>
             </div>
             <!----------Enter income budget---------->

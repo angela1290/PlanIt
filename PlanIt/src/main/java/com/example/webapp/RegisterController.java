@@ -14,12 +14,11 @@ public class RegisterController {
     public RegisterController(AllUsers allUsers) {
         this.allUsers = allUsers;
     }
-    
+
     @GetMapping("/register")
     public String showRegister(Model m, @ModelAttribute User user){
         m.addAttribute("allUser", allUsers.getAllUsers());
             m.addAttribute("tempRegisterUser", user);
-
 
         return "register";
     }
